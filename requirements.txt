@@ -1,0 +1,23 @@
+# Pinned dependencies (NFR-007). Install into the venv with:
+#   .venv\Scripts\python.exe -m pip install -r requirements.txt
+#
+# ffmpeg is a required external binary (not pip-installable); it must be on PATH.
+#
+# yt-dlp has a floor instead of an exact pin: it must stay independently
+# upgradable because it breaks when YouTube changes (NFR-007).
+# Double-click "Update yt-dlp.bat" to upgrade it alone.
+streamlit==1.58.0
+syncedlyrics==1.0.1
+requests==2.34.2  # direct LRCLIB structured search (FR-005, R-006 mitigation)
+yt-dlp>=2026.6.9
+
+# M2 transcription fallback (CPU-only by decision, PRD Q-003 — on Windows,
+# plain PyPI torch is the CPU build; never switch to a CUDA index).
+whisperx==3.8.6
+demucs==4.0.1
+torch==2.8.0
+torchaudio==2.8.0
+soundfile==0.14.0  # torchaudio's only save backend on Windows (Demucs writes wavs)
+
+# Dev/test only.
+pytest==9.0.3

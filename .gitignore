@@ -1,0 +1,29 @@
+# Virtual environment
+.venv/
+
+# Python caches
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# IDE / Tool configs
+.claude/
+.superpowers/
+.streamlit/
+
+# Output and working directories
+Output/
+work/
+logs/
+graphify-out/
+video/
+
+# Media files
+*.mp4
+*.mp3
+*.webm
+
+# OS files
+.DS_Store
+Thumbs.db
